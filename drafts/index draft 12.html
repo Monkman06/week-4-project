@@ -1,0 +1,142 @@
+<!DOCTYPEHTML>     
+<html>
+    
+  <title>Starwars rpg </title>
+
+  <!-- We link our html to the Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <body background="ATATpic.jpg">
+  <font face="times" color="blue"><h1><strong>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Light vs Dark Force-Off </h1></strong></font>
+  </style>
+
+
+<div class="row"> <!--kylo renns' photo and selector button-->
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><h4>Kylo Ren</h4><a href="#">
+  <button id="close" class="closing" onClick="javascript:close_clip()"><img src="kylo-ren.jpg"/></button> 
+  </div>
+ 
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><h4>General Hux</h4><a href="#">
+  <button id="close" class="closing" onClick="javascript:close_clip()"><img src="generalhux.jpg"/></button> 
+  </div>
+  
+  <di<div class="col-md-1"></div>
+  <div class="col-md-2"><h4>Finn</h4><a href="#">
+  <button id="close" class="closing" onClick="javascript:close_clip()"><img src="finn.jpg"/></button> 
+  </div>
+  
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><h4>Rey</h4><a href="#">
+  <button id="close" class="closing" onClick="javascript:close_clip()"><img src="rey.jpg"/></button> 
+  </div>
+  
+  </div>
+<br><br><br>
+<br><br><br><br>
+
+<div class="row">
+   <div class="col-lg-6">
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">fight box</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 id="health points"></h1>
+                    <h1 id="wins"></h1>
+                    <h1 id="attack"></h1>
+                    <hr>
+                    <h1 id="result"></h1>
+                </div>
+            </div>
+</div>
+<div class="row">
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-2">fight position 1</div>
+  <div class="col-md-2">fight position 2</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;      
+      <a href="#" class="btn btn-danger btn-lg"><h4><strong>Attack</strong></h4></a>
+ 
+
+
+<script src=“https://code.jquery.com/jquery-2.2.3.js” integrity=“sha-laXWtGydpwqJ8JA+X9miwmaiKhn8tVmOVEigRNtP4=“ crossorigin=“animus”>
+
+var characterInfo = {
+  Kylo Renn: {
+    myname: "Kylo Renn",
+    attackPower: 25,
+    defaultPower: 20, 
+    healthPts: 100,
+    defaultHealth: 100, 
+    imgUrl: "kyloren.jpg"},
+  
+  General Hux: {
+    myname: "General Hux",
+    attackPower: 15,
+    defaultPower: 10,
+    healthPts: 90,
+    defaultHealth: 90, 
+    imgUrl: "generalhux.jpg"},
+    
+  Finn : {
+    myname: "Finn",
+    attackPower: 15,
+    defaultPower: 20,
+    healthPts: 110,
+    defaultHealth: 110, 
+    imgUrl: "Finn.jpg"},
+  
+  rey: {
+    myname: "Ray",
+    attackPower: 50,        // like the movie, she is the strongest charecter
+    defaultPower: 100,
+    healthPts: 85,
+    defaultHealth: 85, 
+    imgUrl: "rey.jpg"}
+};
+
+// screenposId=["firstimg", "secondimg", "thirdimg", "fourthimg"];
+var names=["kylo_ren", "general_hux", "finn", "rey"];
+var yourChar = "";     // YOUR CHOSEN CHARACTER -- GLOBAL VARIABLE
+var enemyChar = "";    // YOUR CURRENT/CHOSEN ENEMY CHARACTER -- GLOBAL VARIABLE
+roundCounter = 0; // Counts number of rounds
+winsCounter = 0;
+lossesCounter =0;
+
+
+     // increases players size when selected
+      $(".growButton").on("click", function(){
+          $(".generalhux").animate({height: '500px'});
+      }); 
+ $('#clear').on('click', function() {
+      $("#display").empty();
+    });
+
+  };
+
+
+      
+      
+
+      
+   
+
+  </script>
+</body>
+</html>
+   

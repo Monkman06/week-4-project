@@ -1,0 +1,139 @@
+<!DOCTYPEHTML>     
+<html>
+    
+  <title>Starwars rpg </title>
+
+  <!-- We link our html to the Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <body background="starkillerbase.jpg">
+  <h1><strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Light vs Dark Force Off</strong></h1>
+  </style>
+<!---->    
+
+<div class="row"> <!--kylo renns' photo and selector button-->
+  <div class="col-md-1">.</div>
+ 
+  <div class="col-md-2">
+    <a href="#">
+      <img class="img-responsive" src="kyloren.jpg" alt="" height="110" width="220"> 
+      <a href="#" class="btn btn-primary btn-lg growButton playerSelect">Kylo Renn</a>
+    </a>  
+  </div>
+ 
+  <div class="col-md-1">.</div> 
+ 
+  <div class="col-md-2"><a href="#"><!--general huxs' photo and selector button-->
+        <img class="img-responsive" src="generalhux.jpg" alt="" height="110" width="220">
+        <a href="#" class="btn btn-primary btn-lg growButton playerSelect">General Hux</a>
+      </a>     
+  </div>
+  
+  <div class="col-md-1">.</div>
+  
+  <div class="col-md-2"><a href="#"> <!--finns' photo and selector button-->
+       <img class="img-responsive" src="Finn.jpg" alt="" height="110" width="220" >
+        <a href="#" class="btn btn-primary btn-lg growButton playerSelect">Finn</a>
+      </a></div>
+  
+  <div class="col-md-1">.</div>
+  
+  <div class="col-md-2"><a href="#"><!--rey' photo and selector button-->
+        <img class="img-responsive" src="rey.jpg" alt="" height="100" width="220">
+        <a href="#" class="btn btn-primary btn-lg growButton playerSelect">Rey</a>
+       </a></div>
+  </div>
+
+<br><br><br>
+<br><br><br><br>
+
+<div class="row">
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-2">fight position 1</div>
+  <div class="col-md-2">fight position 2</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+</div>
+    
+<br><br><br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      
+      <a href="#" class="btn btn-danger btn-lg"><h4><strong>Attack</strong></h4></a>
+      <a href="#" class="btn btn-warning btn-lg"><h4>Reset</h4></a>
+
+
+<script src=“https://code.jquery.com/jquery-2.2.3.js” integrity=“sha-laXWtGydpwqJ8JA+X9miwmaiKhn8tVmOVEigRNtP4=“ crossorigin=“animus”>
+
+var characterInfo = {
+  Kylo Renn: {
+    myname: "Kylo Renn",
+    attackPower: 25,
+    defaultPower: 20, 
+    healthPts: 100,
+    defaultHealth: 100, 
+    imgUrl: "kyloren.jpg"},
+  
+  General Hux: {
+    myname: "General Hux",
+    attackPower: 15,
+    defaultPower: 10,
+    healthPts: 90,
+    defaultHealth: 90, 
+    imgUrl: "generalhux.jpg"},
+    
+  Finn : {
+    myname: "Finn",
+    attackPower: 15,
+    defaultPower: 20,
+    healthPts: 110,
+    defaultHealth: 110, 
+    imgUrl: "Finn.jpg"},
+  
+  rey: {
+    myname: "Ray",
+    attackPower: 50,        // like the movie, she is the strongest charecter
+    defaultPower: 100,
+    healthPts: 85,
+    defaultHealth: 85, 
+    imgUrl: "rey.jpg"}
+};
+
+// screenposId=["firstimg", "secondimg", "thirdimg", "fourthimg"];
+var names=["kylo_ren", "general_hux", "finn", "rey"];
+var yourChar = "";     // YOUR CHOSEN CHARACTER -- GLOBAL VARIABLE
+var enemyChar = "";    // YOUR CURRENT/CHOSEN ENEMY CHARACTER -- GLOBAL VARIABLE
+roundCounter = 0; // Counts number of rounds
+winsCounter = 0;
+lossesCounter =0;
+
+
+     // increases players size when selected
+      $(".growButton").on("click", function(){
+          $(".generalhux").animate({height: '500px'});
+      }); 
+
+      
+      
+
+      
+    };
+
+  </script>
+</body>
+</html>
+   
+
+
+
+
+</body>
+</html>

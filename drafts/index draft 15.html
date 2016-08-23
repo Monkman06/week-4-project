@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Force off week 4 game</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+ <body background="ATATpic.jpg">
+  <font face="times" color="blue"><h1><strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Light vs Dark Force-Off </h1></strong></font></style>
+
+<div class="row"> 
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><h4>Kylo Ren</h4><a href="#"><!--kylo renns' photo/ selector button-->
+    <button id="close" class="closing" onClick="javascript:close_clip()"><img src="kylo-ren.jpg"/></button></div> 
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><h4>General Hux</h4><a href="#"><!--general hux' photo/ selector button-->
+    <button id="close" class="closing" onClick="javascript:close_clip()"><img src="generalhux.jpg"/></button></div>
+  
+  <di<div class="col-md-1"></div>
+  <div class="col-md-2"><h4>Finn</h4><a href="#"><!--finns' photo/ selector button-->
+    <button id="close" class="closing" onClick="javascript:close_clip()"><img src="finn.jpg"/></button> </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><h4>Rey</h4><a href="#"><!--reys' photo/ selector button-->
+  <button id="close" class="closing" onClick="javascript:close_clip()"><img src="rey.jpg"/></button> 
+  </div>
+</div><br><br><br><br><br><br><br>
+
+<div class="row">
+   <div class="col-lg-6">
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">fight box</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 id="health points"></h1>
+                    <h1 id="wins"></h1>
+                    <h1 id="attack"></h1>
+                    <hr>
+                    <h1 id="result"></h1>
+                </div>
+            </div>
+            <div class="row">
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-2">fight position 1</div>
+  <div class="col-md-2">fight position 2</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;      
+      <a href="#" class="btn btn-danger btn-lg"><h4><strong>Attack</strong></h4></a>
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+    // make our variables global to the runtime of our application
+    var playerSelect, userPlayer, compPlayer, fight, scoreBox;
+      function initializeCalculator () {
+        playerSelect = "";
+        userName = "";
+        compPlayer = "";
+        fight = "";
+        scoreBox = "";
+
+        $('#playerSelect, #compPlayer, #fight, #scoreBox').empty();
+    }
+
+var characterInfo = {
+  Kylo Renn: { //he's the second most powerful player
+    myname: "kylo_renn",
+    attackPower: 25,
+    defaultPower: 20, 
+    healthPts: 100,
+    defaultHealth: 100, 
+    imgUrl: "kyloren.jpg"},
+  
+  General Hux: {
+    myname: "general_hux",
+    attackPower: 15,
+    defaultPower: 10,
+    healthPts: 90,
+    defaultHealth: 90, 
+    imgUrl: "generalhux.jpg"},
+    
+  Finn: {
+    myname: "finn",
+    attackPower: 15,
+    defaultPower: 20,
+    healthPts: 90,
+    defaultHealth: 90, 
+    imgUrl: "Finn.jpg"},
+  
+  Rey: {
+    myname: "ray",
+    attackPower: 50,        // like the movie, she is the strongest charecter
+    defaultPower: 100,
+    healthPts: 110,
+    defaultHealth: 110, 
+    imgUrl: "rey.jpg"}
+};
+
+// screenposId=["firstimg", "secondimg", "thirdimg", "fourthimg"];
+var names=["kylo_ren", "general_hux", "finn", "rey"];
+var yourChar = "";     // YOUR CHOSEN CHARACTER -- GLOBAL VARIABLE
+var enemyChar = "";    // YOUR CURRENT/CHOSEN ENEMY CHARACTER -- GLOBAL VARIABLE
+roundCounter = 0; // Counts number of rounds
+winsCounter = 0;
+lossesCounter =0;
+
+function divFactory(idName, addorDelete, idLocation)
+{
+
+  if (idLocation == undefined) {
+    idLocation = "body";        // set body as default if no argument passed.  
+  } 
+
+// (1) idName will be a STRING that you will pass, not a Jquery object. 
+// (2) addorDelete will be a boolean.  TRUE means add (append() method will be used) and FALSE means delete (remove() method). 
+// (3) OPTIONAL: idLocation will be the PARENT element of the new DIV ID.  Pass as a string, not a JQ object! You may leave this argument blank,
+// and the function will by default assume that you're appending an ID to the document body.  
+   
+// This function only appends/deletes things from DOCUMENT BODY or A DIV TAGGED WITH AN ID.  
+
+      // we convert these strings into a jquery object  
+
+  if (idLocation != "body"){
+      idLocation = $("#"+idLocation); 
+  } else {
+    idLocation = $(idLocation);
+    console.log(idLocation);
+  } 
+
+  var testIt = $("#"+idName);
+
+  if((testIt.length == 0) && (addorDelete == true)) {      // If idName doesn't yet exist, and you selected to add an element [mistake prevention measure]
+    idName = $("<div id="+idName+">");
+    idLocation.append(idName);
+  }
+
+  if ((testIt.length > 0) && (addorDelete == false)) {
+    idName = $("#"+idName);
+    idName.remove();
+  }
+
+}
+
+function imageFactory (idName, addDelete, imgClass, urlofImg) 
+ 
+{
+  console.log(imgClass);
+  idName = $("#"+idName);
+
+  if (addDelete == true) {
+    var toAppend = $("<img class=" + imgClass + ">").attr("src", urlofImg);
+    idName.append(toAppend); 
+  } else if (addDelete == false) {
+    idName.remove(); // THIS IS WRONG  
+  }
+
+}
+
+function attachMouseover(charorenemy, elementid)   // True means you're picking character, false means opponent 
+{
+
+  $("#"+elementid).mouseover(function(){
+    console.log($(this)[0].id);
+    var a = "<h2> Name: " + characterInfo[$(this)[0].id].myname + "</h2>";
+    console.log(a);
+    var b = "<h2> Health Points: " + characterInfo[$(this)[0].id].healthPts +"</h2>";
+    console.log(b); 
+    var c = "<h2> Attack Points: " + characterInfo[$(this)[0].id].attackPower + "</h2>";
+    console.log(c);  
+    $("#statbox").html(a+b+c);
+
+  }).mouseleave(function(){
+    if (charorenemy) {
+    $("#statbox").html("<br><h1>Pick Your Character</h1><br>");
+    } else {
+      $("#statbox").html("<br><h1>Pick Your Opponent</h1><br>"); 
+    }
+  });
+
+}
+
+function startScreen(){
+
+  $(document).ready(function(){
+
+// We let you choose a character IF THIS IS THE FIRST ROUND. Determine if it's the first round
+// By seeing if the names array still contains 4 characters (ie, see if everyone's alive!)
+// If they're all alive, it's the beginning of the game!  
+
+    divFactory("widegallery", true);
+    divFactory("gallery", true, "widegallery"); 
+    $("#statbox").html("<br><h1>Pick Your Character</h1><br>");
+
+    if (names.length == 4) {
+
+      for(i=0; i<names.length; i++)
+      {
+        divFactory(names[i], true, "gallery"); 
+        $("#"+names[i]).addClass("animated lightSpeedIn");
+        imageFactory(names[i], true, "startimg", characterInfo[names[i]].imgUrl);
+         
+        attachMouseover(true, names[i]);
+
+        $("#"+names[i]).on ("click", function(){            
+              // Remove pictures of characters you can choose from
+            
+            yourChar=$(this)[0].id;   // Set your character to equal the name/id of the character you clicked on
+            divFactory("gallery", false);
+            $("#statbox").text("");  
+            enemies();    // Call the CHOOSE YOUR ENEMY function now     
+        });
+
+      }   
+ 
+    } else { 
+
+      enemies(); 
+      
+        }
+
+  });
+
+}
+
+function enemies(){
+  $(document).ready(function(){
+
+    if (names.length > 2) {   // If there are more than two characters left, we'll do the enemy choice screen, attach click handlers, etc
+    
+      $("#statbox").html("<br>Pick Your Opponent<br><br>");
+
+      divFactory("enemygallery", true, "widegallery"); 
+
+
+      for(i=0; i<names.length; i++)
+      {
+
+        if (names[i] !== yourChar) {
+
+          divFactory(names[i], true, "enemygallery"); 
+          $("#"+names[i]).addClass("animated lightSpeedIn");
+          imageFactory(names[i], true, "enemies", characterInfo[names[i]].imgUrl);
+
+          attachMouseover(false, names[i]); 
+
+          $("#"+names[i]).on ("click", function(){
+             
+            $("#widegallery").html("<P> </P>");
+            $("#enemygallery").html("");
+
+            divFactory("fightbox", true);       // put div to hold opponents' pictures & attack button onto screen 
+            divFactory("chosenone", true, "fightbox");    // div to hold image of your character placed inside fightbox div
+            imageFactory("chosenone", true, "yourchar", characterInfo[yourChar].imgUrl);  // image rendered
+
+            enemyChar=$(this)[0].id;    // Set your character to equal the name/id of the character you clicked on  
+            
+            x = $("<button id='attackbut'>ATTACK</button>");  // attack button placed inline between two oppponents' images
+            $("#fightbox").append(x);   
+            
+            divFactory("myenemy", true, "fightbox");        // finally, div added to hold enemy character image
+            imageFactory("myenemy", true, "enemychar", characterInfo[enemyChar].imgUrl);  // image rendered
+            
+            battleTime(); 
+          });
+
+        }  
+      }
+     
+    } else {
+      
+      for (i=0; i < names.length; i++) 
+      {
+        if (names[i] !== yourChar) {
+          divFactory("chosenone", true, "fightbox");  // div to hold image of your character placed inside fightbox div
+          imageFactory("chosenone", true, "yourchar", characterInfo[yourChar].imgUrl);  // image rendered
+          x = $("<button id='attackbut'>ATTACK</button>");
+            $("#fightbox").append(x);   
+          divFactory("myenemy", true, "fightbox");
+          enemyChar = names[i]; 
+          imageFactory("myenemy", true, "enemychar", characterInfo[enemyChar].imgUrl);         
+        }
+      }
+      battleTime(); 
+    }  
+  });
+}
+
+function displayStats(){
+
+  var current = $("#statbox");
+  current.html("");
+  current.append("<h6>Your Health Points: "+characterInfo[yourChar].healthPts+"</h6>");
+  current.append("<h6>Your Attack Power: "+characterInfo[yourChar].attackPower+"</h6>");
+  current.append("<h6>"+characterInfo[enemyChar].myname+"'s Health Points: "+characterInfo[enemyChar].healthPts+"</h6>");
+  current.append("<h6>"+characterInfo[enemyChar].myname+"'s Attack Power: "+characterInfo[enemyChar].attackPower+"</h6>");
+  current.attr("style","border: 5px dashed orange;");
+
+}
+
+function resetandClear(){
+
+    names=["kylo_ren", "general_hux", "finn", "rey"];
+
+    for (i=0; i<names.length; i++) {
+      characterInfo[names[i]].healthPts = characterInfo[names[i]].defaultHealth;
+      characterInfo[names[i]].attackPower = characterInfo[names[i]].defaultPower; 
+      characterInfo[names[i]].healthPts = characterInfo[names[i]].defaultHealth;
+      characterInfo[names[i]].attackPower = characterInfo[names[i]].defaultPower; 
+    }
+
+    
+      yourChar = "";     // YOUR CHOSEN CHARACTER -- GLOBAL VARIABLE
+      enemyChar = "";
+
+}
+
+function youwinLose() {
+
+  if ((names.length == 1) && (characterInfo[yourChar].healthPts >= 0)){
+    console.log("PUT WIN ANNOUNCEMENT HERE!");
+    // divFactory("endpic", true);
+    // imageFactory("endpic", true, "animated rotateIn endgamepic", "assets/images/planetblowup.png");
+    $("#statbox").html("You Win!");
+    confirm("You won"); 
+    resetandClear();
+  } else if (characterInfo[yourChar].healthPts <=0) {
+    console.log("PUT LOSE ANNOUNCEMENT HERE!");
+    $("#statbox").html("You Lose!"); 
+    confirm("You lost"); 
+    // divFactory("endpic", true);
+    // imageFactory("endpic", true, "animated rotateIn endgamepic", "assets/images/planetblowup.png");
+    resetandClear();
+  } 
+
+ }
+
+function resetRound(){
+  
+  $("#statbox").html("");
+  $("#myenemy").remove();
+  $("#chosenone").remove();
+  $("#attackbut").remove();
+
+  youwinLose(); 
+  startScreen();
+}
+
+function battleTime(){
+  
+  $("#statbox").html("<h1>"+characterInfo[yourChar].myname+" versus "+characterInfo[enemyChar].myname+"</h1><h1>Click ATTACK to Begin!</h1>")
+
+  $("#attackbut").on("click", function(){    // THE FOLLOWING HAPPENS WHEN YOU CLICK THE ATTACK BUTTON
+    
+    displayStats(); 
+
+    // Reduce enemy's health points in proportion to your attack power
+
+    characterInfo[enemyChar].healthPts -= characterInfo[yourChar].attackPower; // FIX THIS
+
+    // Reduce your health points by simply sutracting enemy's counterattack power
+    if (characterInfo[enemyChar].healthPts - characterInfo[yourChar].attackPower > 0) {
+      characterInfo[yourChar].healthPts -= characterInfo[enemyChar].attackPower;  
+    }
+
+    // Increase your attack power by a factor of 1x the starting value each attack
+    characterInfo[yourChar].attackPower += characterInfo[yourChar].defaultPower; 
+
+    if(characterInfo[enemyChar].healthPts <= 0) {
+       
+      var x = names.indexOf(enemyChar); 
+      names.splice(x,1);  
+                        // Remove defeated enemy from name index
+                        // So when we re-render the enemy choice page, it will not
+      resetRound();             // even be able to include the person you defeated!
+
+    }
+
+    if(characterInfo[yourChar].healthPts <= 0) {
+
+      resetRound();  // This will end the game and will call the function to check if you've won or lost -- of course, you've
+              // lost. 
+    } 
+  });
+}
+openingScreen();  
+</script>
+</html>
+  

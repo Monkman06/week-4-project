@@ -1,0 +1,148 @@
+<!DOCTYPEHTML>     
+<html>
+    
+  <title>Starwars rpg 9</title>
+
+  <!-- We link our html to the Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <body background="starkillerbase.jpg">
+  <h1><strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Light vs Dark Force Off</strong></h1>
+  </style>
+<!---->    
+
+<div class="row"> <!--kylo renns' photo and selector button-->
+  <div class="col-md-1">.</div>
+ 
+  <div class="col-md-2">
+    <a href="#">
+      <img class="img-responsive" src="kyloren.jpg" alt="" height="110" width="220"> 
+      <a href="#" class="btn btn-primary btn-lg growButton playerSelect">Kylo Renn</a>
+    </a>  
+  </div>
+ 
+  <div class="col-md-1">.</div> 
+ 
+  <div class="col-md-2"><a href="#"><!--general huxs' photo and selector button-->
+        <img class="img-responsive" src="generalhux.jpg" alt="" height="110" width="220">
+        <a href="#" class="btn btn-primary btn-lg growButton playerSelect">General Hux</a>
+      </a>     
+  </div>
+  
+  <div class="col-md-1">.</div>
+  
+  <div class="col-md-2"><a href="#"> <!--finns' photo and selector button-->
+       <img class="img-responsive" src="Finn.jpg" alt="" height="110" width="220" >
+        <a href="#" class="btn btn-primary btn-lg growButton playerSelect">Finn</a>
+      </a></div>
+  
+  <div class="col-md-1">.</div>
+  
+  <div class="col-md-2"><a href="#"><!--rey' photo and selector button-->
+        <img class="img-responsive" src="rey.jpg" alt="" height="100" width="220">
+        <a href="#" class="btn btn-primary btn-lg growButton playerSelect">Rey</a>
+       </a></div>
+  </div>
+
+<br><br><br>
+<br><br><br><br>
+
+<div class="row">
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-2">fight position 1</div>
+  <div class="col-md-2">fight position 2</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+  <div class="col-md-1">.</div>
+</div>
+    
+<br><br><br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      
+      <a href="#" class="btn btn-danger btn-lg"><h4><strong>Attack</strong></h4></a>
+      <a href="#" class="btn btn-warning btn-lg"><h4>Reset</h4></a>
+
+
+<script src=“https://code.jquery.com/jquery-2.2.3.js” integrity=“sha-laXWtGydpwqJ8JA+X9miwmaiKhn8tVmOVEigRNtP4=“ crossorigin=“animus”>
+
+<div id="display"></div>
+  <div id="buttons"></div>
+  <button id="clear">clear</button>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+
+    $( document ).ready(function() {
+    //we store all the letters and underscore inside of an array called letters
+    var charecters = ["kyloren.jpg","hux","finn","rey"];
+
+    /*
+    REMEMBER USE jQuery!
+
+    step 1: loop over the letters
+      step 2: inside the loop
+        * make a variable named b
+          * set it equal to a button with
+            - the following classes: letter-button letter letter-button-color
+            - a data-let attribute set equal to letters[i]
+            - text of letters[i]
+        * step 3: append b to the div with an id of buttons
+    */
+    for (var i = 0; i < charecters.length; i++) {
+        var b = $('<button>');
+        b.addClass('charecters-button letter charecters-button-color');
+        b.attr('data-char', charecters[i]);
+        b.text(charecters[i])
+
+        //alternatively you could do it in one line but it'll be harder to read
+        //var b = $('<button class="letter-button letter letter-button-color" data-let="'+ letters[i] +'">').text(letters[i]);
+
+        $("#buttons").append(b);
+        //alert('watch this');
+    };
+
+
+      $('.letter-button').on('click', function() {
+        /*
+          Step 4:
+
+          * inside this anonymous function that gets passed to the click event
+            * create a variable called fridgeMagnet
+              * set the variable equal to a new div
+                * with the following classes: letter fridge-color
+                * chain this onto the div:
+                  .text($(this).data('let'))
+        */
+
+        //$('<p>') //that will do <p></p> for you
+        //$('<a>') // that will do <a></a> for you
+console.log($(this));
+      var fridgeMagnet = $('<div class="let">').text($(this).data('let'));
+
+      /* Step 5: append the fridgeMagnet variable to the element with an id of display */
+      $("#display").append(fridgeMagnet);
+      //alert('watch this')
+    });
+
+      //Step 6: on the element with an id of clear, attach an on click function
+        /*
+          Step 7: inside this anonymous function that gets passed to the click event
+            * use the empty() function on the element with an id of display
+        */
+    $('#clear').on('click', function() {
+      $("#display").empty();
+    });
+
+  });
+
+</script>
+</body>
+</html>

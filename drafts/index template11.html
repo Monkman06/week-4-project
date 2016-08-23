@@ -1,0 +1,144 @@
+<!DOCTYPEHTML>     
+<html>
+    
+  <title>Starwars rpg 11</title>
+
+  <!-- We link our html to the Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <body background="ATATpic.jpg">
+  <font face="times" color="blue"><h1><strong>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Light vs Dark Force-Off </h1></strong></font>
+  </style>
+<!---->    
+
+<div class="panel-body">
+ <div class="row"> <!--kylo rens' photo and selector button-->
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><h4>Kylo Ren</h4><a href="#">
+  <button id="close" class="closing" onClick="javascript:close_clip()"><img src="kylo-ren.jpg"/></button> 
+  </div>
+ 
+  <div class="col-md-1">.</div> 
+ 
+  <div class="col-md-2"><h4>General Hux</h4><a href="#"><!--general huxs' photo and selector button-->
+          
+<button id="close" class="closing" onClick="javascript:close_clip()"><img src="generalhux.jpg" /></button>
+
+
+
+<button id="close" class="closing" onClick="javascript:close_clip()"><img src="Finn.jpg" /></button>
+
+  
+  
+  <div class="col-md-1">.</div>
+  <button id="close" class="closing" onClick="javascript:close_clip()"><img src="Rey.jpg" /></button>
+
+
+  </div>
+
+<br><br><br>
+<br><br><br><br>
+
+<div class="row">
+   <div class="col-lg-6">
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Score box</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 id="firstNumber"></h1>
+                    <h1 id="operator"></h1>
+                    <h1 id="secondNumber"></h1>
+                    <hr>
+                    <h1 id="result"></h1>
+                </div>
+            </div>
+</div>
+ 
+ </div>   
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      
+      <a href="#" class="btn btn-danger btn-lg"><h4><strong>Attack</strong></h4></a>
+      <a href="#" class="btn btn-warning btn-lg"><h4>Reset</h4></a>
+
+
+<script src=“https://code.jquery.com/jquery-2.2.3.js” integrity=“sha-laXWtGydpwqJ8JA+X9miwmaiKhn8tVmOVEigRNtP4=“ crossorigin=“animus”>
+
+<div id="display"></div>
+  <div id="buttons"></div>
+  <button id="clear">clear</button>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+
+    $( document ).ready(function() {
+    //we store all the letters and underscore inside of an array called letters
+    var charecters = ["kyloren.jpg","hux","finn","rey"];
+
+    /*
+    REMEMBER USE jQuery!
+
+    step 1: loop over the letters
+      step 2: inside the loop
+        * make a variable named b
+          * set it equal to a button with
+            - the following classes: letter-button letter letter-button-color
+            - a data-let attribute set equal to letters[i]
+            - text of letters[i]
+        * step 3: append b to the div with an id of buttons
+    */
+    for (var i = 0; i < charecters.length; i++) {
+        var b = $('<button>');
+        b.addClass('charecters-button letter charecters-button-color');
+        b.attr('data-char', charecters[i]);
+        b.text(charecters[i])
+
+        //alternatively you could do it in one line but it'll be harder to read
+        //var b = $('<button class="letter-button letter letter-button-color" data-let="'+ letters[i] +'">').text(letters[i]);
+
+        $("#buttons").append(b);
+        //alert('watch this');
+    };
+
+
+      $('.letter-button').on('click', function() {
+        /*
+          Step 4:
+
+          * inside this anonymous function that gets passed to the click event
+            * create a variable called fridgeMagnet
+              * set the variable equal to a new div
+                * with the following classes: letter fridge-color
+                * chain this onto the div:
+                  .text($(this).data('let'))
+        */
+
+        //$('<p>') //that will do <p></p> for you
+        //$('<a>') // that will do <a></a> for you
+console.log($(this));
+      var fridgeMagnet = $('<div class="let">').text($(this).data('let'));
+
+      /* Step 5: append the fridgeMagnet variable to the element with an id of display */
+      $("#display").append(fridgeMagnet);
+      //alert('watch this')
+    });
+
+      //Step 6: on the element with an id of clear, attach an on click function
+        /*
+          Step 7: inside this anonymous function that gets passed to the click event
+            * use the empty() function on the element with an id of display
+        */
+    $('#clear').on('click', function() {
+      $("#display").empty();
+    });
+
+  });
+
+</script>
+</body>
+</html>
