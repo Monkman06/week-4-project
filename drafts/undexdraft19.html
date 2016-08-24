@@ -19,29 +19,29 @@
     <div class="col-xs-2">
       <a href="#" 
          class="thumbnail thumbnail1" 
-         id="kyloren">
-        <img src="kylo-ren.jpg" alt="lukeskywalker">
-        Kylo Ren 100
+         id="kylo-ren">
+        <img src="kylo-ren.jpg" alt="kylo-ren">
+        Kylo Ren 125
       </a>
     </div>
 
     <div class="col-xs-2">
-      <a href="#" class="thumbnail thumbnail2" id="darthvader">
-        <img src="assets/images/darthvader.jpg" alt="darthvader">
-        Darth Vader 120
+      <a href="#" class="thumbnail thumbnail2" id="generalhux">
+        <img src="generalhux.jpg" alt="generalhux">
+        General Hux 90
       </a>
     </div>
 
     <div class="col-xs-2">
-      <a href="#" class="thumbnail thumbnail3" id="stormtrooper">
-        <img src="assets/images/stormtrooper.jpg" alt="stormtrooper">
-        Storm Trooper 150
+      <a href="#" class="thumbnail thumbnail3" id="finn">
+        <img src="finn.jpg" alt="finn">
+        Finn 100
       </a>
     </div>
 
     <div class="col-xs-2">
-      <a href="#" class="thumbnail thumbnail4" id="yoda">
-        <img src="assets/images/yoda.jpg" alt="yoda">Yoda 100
+      <a href="#" class="thumbnail thumbnail4" id="rey">
+        <img src="rey.jpg" alt="rey">Rey 150
       </a>
     </div>
 
@@ -53,19 +53,12 @@
          <a href="#" 
            class="thumbnail" 
            id="player">
-<!--  This is what we need to code in the script to put here
-<div id="player-name"></div>
-<img src="assets/images/lukeskywalker.jpg", alt="img">
-<div id="player-health"></div>
--->
+
          </a>
      </div>
     </div>
-
   <!-- Container for Enemies Available -->
-
     <div class="row" id="enemiesAvailable">Enemies Available to Attack:</div>
-
 
   <!-- FIGHT SECTION -->
     <div class="fightSection">
@@ -78,24 +71,52 @@
          <a href="#" 
            class="thumbnail" 
            id="defender">
-<!--  This is what we need to code in the script to put here
-<div id="player-name"></div>
-<img src="assets/images/lukeskywalker.jpg", alt="img">
-<div id="player-health"></div>
--->
+
          </a>
       </div>
     </div>
 
 
-    <script type="text/javascript" src="assets/javascript/game.js">
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous">
+var starwars = {
 
+  player: "", // set to a character once chosen by the user
 
-  // Keep track of the current state of the game.  These are based on the different
-  // states of the display, however, they may not all be needed.
-  // 1: New Game, 2: Player Selected, 3: Defender Selected, 4: Attacking
-  // 5: Game Lost, 6: Enemy Defeated, 7: Game Won
+  character = {
+    name: "",  // May not be needed for anything more than debugging
+    healthPoints: 0,
+    attackPower: 0,
+    counterAttack Power: 0,
 
+  testfunc: funtion() {
+
+  }
+  
+  attack: function() {
+
+  },
+
+  counterAttack: function {
+
+  }
+}
+    $(document).ready(function(){
+
+        $(".thumbnail1").on("click", function(){
+                    $("#1").animate({opacity: '.5'});
+                });
+        $(".thumbnail2").on("click", function(){
+                    $("#2").animate({width: '500px'});
+                });
+        $(".thumbnail3").on("click", function(){
+                    $("#three").animate({right: '500px'});
+                });
+        $(".thumbnail4").on("click", function(){
+                    $("#4").animate({height: '500px'});
+                });
+     })
+
+     
   newGame: 1, 
   playerSelected: 2, 
   defenderSelected: 3,
@@ -140,34 +161,19 @@
       'yoda': { name: 'Yoda', healthPoints: 100, basePower: 40, attackPower: 0 }      
     };
 
-    // Push the thumbnail info for each character into the html
-
 
   },
 
-  // Build the html to display the enemies available in the 
-  // enemiesAvailable section.  This will only display the characters
-  // in the game left once a player has been selected.
   loadEnemiesAvailable: function() {
 
   },
 
-  // Once an enemy has been selected, remove all the html for
-  // displaying the enemies available.
   clearEnemiesAvailable: function() {
 
   },
 
   setPlayer: function(player) {
-    // This method will be called when a player is selected.
-    // * Set the player a character object with the attributes set
-    //    with values from the player object passed in.
-    // * Remove it from the list of available players
-    // * Move the from the list of availabel players to the player area
-    // * Move the available players to the enemies available section
-    // * Set the game state to 1 for Player Selected
-
-    // Keep the object id for searches later
+    
     this.playerId = player.id;
 
     this.player = this.playersAvailable[this.playerId];
@@ -187,7 +193,6 @@
     playerImg.attr('alt', this.playerId);
     playerDiv.append(playerImg);
 
-    // Add a div for the health points of the player selected
     playerDiv.append('<div id="player-health">' + this.player.healthPoints);
 
     this.playerCount--;
@@ -195,24 +200,17 @@
   },
 
   setDefender: function(defender) {
-    // Keep the object id for searches later
     this.defenderId = defender.id;
 
-    // Use this for now.  Once functionality works to move
-    // the players available to the enemies available section
-    // this will then use the list of enemies available
     this.defender = this.playersAvailable[this.defenderId];
 
-    // Move the selected defender to the defender area
+    
     $('#' + this.defenderId).remove();
-
-    // Get the defender div
+   
     var defenderDiv = $('#defender');
 
-    // Add a div for the name of the defender selected
     defenderDiv.append('<div>' + this.defender.name + '</div>');
 
-    // Add an image for the player selected
     var defenderImg = $('<img>');
     defenderImg.attr('src', 'assets/images/' + this.defenderId + '.jpg');
     defenderImg.attr('alt', this.defenderId);
@@ -237,38 +235,7 @@
       this.state = this.attacking;
     }
 
-    /*****
-     *
-     *  At this point, we are in attack mode.  Check the healthpoints
-     *  of the player and the defender.  Depending on the result perform
-     *  the following action:
-     *
-     *  If the player's healthpoints are <= 0
-     *    - state = GameLost
-     *    - return;
-     *
-     *  Increase the player's attack power by it's base power value
-     *
-     *  If the defender's healthpoints are > 0
-     *    - Decrease defender's hp by player's attack power points
-     *
-     *  If the defender's hp <= 0
-     *    - Remove the defender
-     *    If there are still players available
-     *      -Indicate to user to select another enemy (is this necessary?)
-     *      -Wait for selection
-     *    Else
-     *      // This may be done outside of this method
-     *      - state = GameWon
-     *      - alert user of game state
-     *      - restart game 
-     *  Else
-     *    - Counter Attack
-     *
-     * Update the defender's healthpoints below it's picture.
-     *
-     */
-
+    
     if (this.player.healthPoints <= 0) {
       this.state = this.GameLost;
       return;
@@ -300,20 +267,7 @@
   },
 
   counterAttack: function() {
-    /*****
-     *
-     * At this point, the player has already attacked the defender.
-     * The defender still has health points and is now attacking the player.
-     *
-     * Decrease the player's healthpoints by the defender's attack 
-     * (i.e. counter attack) power.
-     *
-     * If the player's healthpoints <= 0
-     *    - state = GameLost
-     *
-     * Update the player's healthpoints below it's picture.
-     *
-     */
+   
      console.log("method: counterAttack() called");
 
      this.player.healthPoints -= this.defender.basePower;
@@ -336,12 +290,8 @@ $(document).ready(function(){
   starwars.initGame();
 
   $(".thumbnail").on("click", function(){
-    // If any of the characters are clicked on, take appropriate action.
-    //
-    // NOTE: For consistency, this should either go in another method of
-    // the game or the attack button click event should check the state 
-    // just like this one before calling the attack method.
-    //
+    
+
     if (starwars.state == starwars.newGame){
       starwars.setPlayer(this);
     }
