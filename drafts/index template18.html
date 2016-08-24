@@ -50,8 +50,8 @@
 <div class="row">
   <div class="col-md-2">.</div>
   <div class="col-md-2">.</div>
-  <div class="col-md-2"><h2 style="color:red"> Attacker </h2></div>
-  <div class="col-md-2"><h2 style="color:green">Defender</h2</div>
+  <div class="col-md-2" attacker><h2 style="color:red"> Attacker </h2></div>
+  <div class="col-md-2" defender><h2 style="color:green">Defender</h2</div>
   <div class="col-md-2">.</div>
   <div class="col-md-2">.</div>
 </div>
@@ -63,8 +63,8 @@
 
 <script src=“https://code.jquery.com/jquery-2.2.3.js” integrity=“sha-laXWtGydpwqJ8JA+X9miwmaiKhn8tVmOVEigRNtP4=“ crossorigin=“animus”>
 
- var players = $("<div class='players'");
-var opponents = $("<div class='opponents'");
+ var attacker = $("<div class='attacker'");
+var defender = $("<div class='defender'");
 
 
 opponents.html(players.html());
@@ -109,10 +109,44 @@ $("#pic2").append("<img id='generalhux.jpg' src='generalhux.jpg'/>");
 $("#pic3").append("<img id='finn.jpg' src='finn.jpg'/>");
 $("#pic4").append("<img id='rey.jpg' src='rey.jpg'/>");
 
-// if has fighter(== false
+
+$( "<b>hello</b>" ).appendTo( "body" );
+ 
+// Appends <b>hello</b>:
+$( "<b>hello</b>bye" ).appendTo( "body" );
+ 
+// Syntax error, unrecognized expression: bye<b>hello</b>
+$( "bye<b>hello</b>" ).appendTo( "body" );
+ 
+// Appends bye<b>hello</b>:
+$( $.parseHTML( "bye<b>hello</b>" ) ).appendTo( "body" );
+ 
+// Appends <b>hello</b>wait<b>bye</b>:
+$( "<b>hello</b>wait<b>bye</b>" ).appendTo( "body" );
+
+
 //on click
 //isoalte id 
 //your fighter
+
+if(some condition) {
+
+$(div end location).append(the thing you want to move);
+ 
+}
+ 
+else if (some other condition) {
+
+$(div end location).append(the thing you want to move);}
+ 
+// make sure for divs that if you use and id its “#idname"
+
+
+class is “.classname"
+
+
+
+
 
 //screenposId=["firstimg", "secondimg", "thirdimg", "fourthimg"];
 var names=["kylo_ren", "general_hux", "finn", "rey"];
