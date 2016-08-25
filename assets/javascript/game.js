@@ -43,15 +43,12 @@ var starwars = {
   // in the game regardless of when this method is called.
   loadPlayersAvailable: function() {
     this.playersAvailable = {
-      'darthvader': { name: 'Darth Vader', healthPoints: 120, basePower: 10, attackPower: 0 },      
-      'lukeskywalker': { name: 'Luke Skywalker', healthPoints: 100, basePower: 20, attackPower: 0 },      
-      'stormtrooper': { name: 'Storm Trooper', healthPoints: 150, basePower: 30, attackPower: 0 },      
-      'yoda': { name: 'Yoda', healthPoints: 100, basePower: 40, attackPower: 0 }      
+      'kylo-ren': { name: 'Kylo Ren', healthPoints: 125, basePower: 10, attackPower: 30 },      
+      'generalhux.': { name: 'General Hux', healthPoints: 90, basePower: 20, attackPower: 10 },      
+      'finn': { name: 'Finn', healthPoints: 110, basePower: 30, attackPower: 20 },      
+      'rey': { name: 'Rey', healthPoints: 150, basePower: 40, attackPower: 40 }      
     };
-
     // Push the thumbnail info for each character into the html
-
-
   },
 
   // Build the html to display the enemies available in the 
